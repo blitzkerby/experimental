@@ -1,51 +1,50 @@
 import { ImageBackground } from "expo-image";
 import { Text, View, StyleSheet, Image, Platform } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-/* hooks */ 
-import { showAlert } from "@/hooks/showAlert";
 /* assets */
 import common from "@/styles/common";
 import Button from "@/components/common/CustomButton";
 import { StatusBar } from "expo-status-bar";
+import { useRouter } from "expo-router";
+/* components */
+import GradientOverlay from "@/components/layout/Overlay.Gradient";
+import Content from "@/components/layout/Content";
 
 
 const HomeScreen = () => {
+    const router = useRouter();
+
     return (
         <View style={common.container}>
             <ImageBackground
-                source={"https://i.pinimg.com/736x/90/4b/e1/904be18bb4840cea3e6abf5387e43b6c.jpg"}
+                source={
+                    "https://i.pinimg.com/736x/90/4b/e1/904be18bb4840cea3e6abf5387e43b6c.jpg"
+                }
                 contentFit="cover"
                 style={styles.image}
             >
-                <LinearGradient
-                    colors={["rgba(0, 0, 0, 0.4)", "rgba(0, 0, 0, 0.8)"]}
-                    style={styles.gradient}
-                >
-                    <SafeAreaView style={common.screen}>
+                <GradientOverlay>
+                    <Content>
                         <View style={styles.textBlock}>
-                            <Text style={StyleSheet.compose(
-                                styles.text,
-                                styles.title
-                            )}>
+                            <Text style={StyleSheet.compose(styles.text, styles.title)}>
                                 Simple Meditation
                             </Text>
-                            <Text style={StyleSheet.compose(
-                                styles.text,
-                                styles.subtitle
-                            )}>
+                            <Text style={StyleSheet.compose(styles.text, styles.subtitle)}>
                                 Simple Meditation for Everyone
                             </Text>
                         </View>
 
                         <View>
-                            <Button title={"Get Started"} />
+                            <Button
+                                title={"Get Started"}
+                                onPress={() => router.push("./nature-meditate")}
+                            />
                         </View>
 
-                        <StatusBar style="light"/>
-                    </SafeAreaView>
-                </LinearGradient>
+                        <StatusBar style="light" />
+                    </Content>
+                </GradientOverlay>
             </ImageBackground>
         </View>
     );
@@ -70,13 +69,7 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         width: "100%",
-    },
-    gradient: {
-        flex: 1,
-        width: "100%",
-        justifyContent: "center", // Center the text vertically and horizontally
-        alignItems: "center",
-    },
+    }
 });
 
 export default HomeScreen;

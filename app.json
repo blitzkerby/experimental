@@ -4,16 +4,21 @@
     "slug": "expo-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/logo-light.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/logo-light.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/logo-light.png",
         "backgroundColor": "#ffffff"
       }
     },
@@ -27,7 +32,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/adaptive-icon.png",
+          "image": "./assets/logo-light.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"

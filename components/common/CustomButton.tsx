@@ -22,7 +22,7 @@ const CustomButton = ({
             onPress={onPress}
         >
             <Text style={StyleSheet.compose(styles.buttonText, textStyles)}>
-                CustomButton
+                {title}
             </Text>
         </TouchableOpacity>
     );
@@ -31,7 +31,7 @@ const CustomButton = ({
 const styles = StyleSheet.create({
     buttonContainer: {
         backgroundColor: '#F5F5F5',
-        borderRadius: 5,
+        borderRadius: 10,
         minHeight: 62,
         justifyContent: 'center',
         alignItems: 'center',

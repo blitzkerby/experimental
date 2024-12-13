@@ -5,12 +5,13 @@ const common = StyleSheet.create({
         flex: 1,
         justifyContent: "space-between",
         paddingHorizontal: 30,
+        paddingVertical: 30,
     },
     container: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-    }
+    },
 })
 
 export default common
